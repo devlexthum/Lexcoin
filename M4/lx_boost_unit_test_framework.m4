@@ -1,4 +1,7 @@
-# ================================================================================
+##Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
+================================================================================
 #  http://www.gnu.org/software/autoconf-archive/ax_boost_unit_test_framework.html
 # ================================================================================
 #
@@ -19,10 +22,6 @@
 #   And sets:
 #
 #     HAVE_BOOST_UNIT_TEST_FRAMEWORK
-#
-# LICENSE
-#
-#   Copyright (c) 2008 Thomas Porschberg <thomas@randspringer.de>
 #
 #   Copying and distribution of this file, with or without modification, are
 #   permitted in any medium without royalty provided the copyright notice

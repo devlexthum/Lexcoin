@@ -1,0 +1,2 @@
+contrib/lexcoin.bash-completion	lexcoind
+contrib/lexcoin-cli.bash-completion  lexcoin-cli

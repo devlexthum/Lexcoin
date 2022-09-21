@@ -1,0 +1,6 @@
+usr/local/bin/Lexcoin-qt usr/bin
+share/pixmaps/Lexcoin32.xpm usr/share/pixmaps
+share/pixmaps/Lexcoin16.xpm usr/share/pixmaps
+share/pixmaps/Lexcoin128.png usr/share/pixmaps
+debian/Lexcoin-qt.desktop usr/share/applications
+debian/Lexcoin-qt.protocol usr/share/kde4/services/

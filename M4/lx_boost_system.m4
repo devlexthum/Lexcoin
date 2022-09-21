@@ -1,4 +1,8 @@
-# ===========================================================================
+##Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
+
+===========================================================================
 #      http://www.gnu.org/software/autoconf-archive/ax_boost_system.html
 # ===========================================================================
 #
@@ -19,13 +23,6 @@
 #   And sets:
 #
 #     HAVE_BOOST_SYSTEM
-#
-# LICENSE
-#
-#   Copyright (c) 2008 Thomas Porschberg <thomas@randspringer.de>
-#   Copyright (c) 2008 Michael Tindal
-#   Copyright (c) 2008 Daniel Casimiro <dan.casimiro@gmail.com>
-#
 #   Copying and distribution of this file, with or without modification, are
 #   permitted in any medium without royalty provided the copyright notice
 #   and this notice are preserved. This file is offered as-is, without any

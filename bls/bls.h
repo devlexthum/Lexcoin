@@ -1,6 +1,6 @@
-// Copyright (c) 2018 The Dash Core developers
-// Distributed under the MIT software license, see the accompanying
-// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// #Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php. 
 
 #ifndef LEX_CRYPTO_BLS_H
 #define LEX_CRYPTO_BLS_H
@@ -247,7 +247,7 @@ public:
     void AggregateInsecure(const CBLSSecretKey& o);
     static CBLSSecretKey AggregateInsecure(const std::vector<CBLSSecretKey>& sks);
 
-#ifndef BUILD_BITCOIN_INTERNAL
+#ifndef BUILD_LEXCOIN_INTERNAL
     void MakeNewKey();
 #endif
     bool SecretKeyShare(const std::vector<CBLSSecretKey>& msk, const CBLSId& id);
@@ -314,7 +314,7 @@ protected:
     bool InternalGetBuf(void* buf) const;
 };
 
-#ifndef BUILD_BITCOIN_INTERNAL
+#ifndef BUILD_LEXCOIN_INTERNAL
 template<typename BLSObject>
 class CBLSLazyWrapper
 {

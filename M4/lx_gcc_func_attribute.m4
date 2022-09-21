@@ -1,4 +1,7 @@
-# ===========================================================================
+##Copyright (c) 2020-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
+===========================================================================
 #   http://www.gnu.org/software/autoconf-archive/ax_gcc_func_attribute.html
 # ===========================================================================
 #
@@ -64,16 +67,6 @@
 #   Unsuppored function attributes will be tested with a prototype returning
 #   an int and not accepting any arguments and the result of the check might
 #   be wrong or meaningless so use with care.
-#
-# LICENSE
-#
-#   Copyright (c) 2013 Gabriele Svelto <gabriele.svelto@gmail.com>
-#
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved.  This file is offered as-is, without any
-#   warranty.
-
 #serial 3
 
 AC_DEFUN([AX_GCC_FUNC_ATTRIBUTE], [

@@ -1,4 +1,7 @@
-# ===========================================================================
+#Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php. 
+===========================================================================
 #      http://www.gnu.org/software/autoconf-archive/ax_boost_chrono.html
 # ===========================================================================
 #
@@ -19,22 +22,9 @@
 #   And sets:
 #
 #     HAVE_BOOST_CHRONO
-#
-# LICENSE
-#
-#   Copyright (c) 2012 Xiyue Deng <manphiz@gmail.com>
-#
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved. This file is offered as-is, without any
-#   warranty.
-
 #serial 1
 
 AC_DEFUN([AX_BOOST_CHRONO],
-[
-	AC_ARG_WITH([boost-chrono],
-	AS_HELP_STRING([--with-boost-chrono@<:@=special-lib@:>@],
                    [use the Chrono library from boost - it is possible to specify a certain library for the linker
                         e.g. --with-boost-chrono=boost_chrono-gcc-mt ]),
         [

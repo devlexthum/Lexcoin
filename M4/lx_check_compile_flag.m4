@@ -1,4 +1,7 @@
-# ===========================================================================
+##Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
+===========================================================================
 #   http://www.gnu.org/software/autoconf-archive/ax_check_compile_flag.html
 # ===========================================================================
 #
@@ -19,15 +22,7 @@
 #   the flags: "CFLAGS EXTRA-FLAGS FLAG".  This can for example be used to
 #   force the compiler to issue an error when a bad flag is given.
 #
-#   INPUT gives an alternative input source to AC_COMPILE_IFELSE.
-#
-#   NOTE: Implementation based on AX_CFLAGS_GCC_OPTION. Please keep this
-#   macro in sync with AX_CHECK_{PREPROC,LINK}_FLAG.
-#
-# LICENSE
-#
-#   Copyright (c) 2008 Guido U. Draheim <guidod@gmx.de>
-#   Copyright (c) 2011 Maarten Bosmans <mkbosmans@gmail.com>
+#   INPUT gives an alternative input source to AC_COMPILE_IFELSE
 #
 #   This program is free software: you can redistribute it and/or modify it
 #   under the terms of the GNU General Public License as published by the

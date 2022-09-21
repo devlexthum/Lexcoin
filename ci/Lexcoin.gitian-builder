@@ -10,8 +10,8 @@ ARG GROUP_ID=1000
 # add user with specified (or default) user/group ids
 ENV USER_ID ${USER_ID}
 ENV GROUP_ID ${GROUP_ID}
-RUN groupadd -g ${GROUP_ID} safepe
-RUN useradd -u ${USER_ID} -g safepe -s /bin/bash -m -d /safepe safepe
+RUN groupadd -g ${GROUP_ID} lexcoin
+RUN useradd -u ${USER_ID} -g lexcoin -s /bin/bash -m -d /lexcoin/lex
 
-WORKDIR /safepe
-USER safepe
+WORKDIR /lexcoin
+USER lexcoin

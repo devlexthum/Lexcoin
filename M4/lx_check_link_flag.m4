@@ -1,4 +1,7 @@
-# ===========================================================================
+#Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php. # 
+===========================================================================
 #    http://www.gnu.org/software/autoconf-archive/ax_check_link_flag.html
 # ===========================================================================
 #
@@ -22,17 +25,7 @@
 #   INPUT gives an alternative input source to AC_LINK_IFELSE.
 #
 #   NOTE: Implementation based on AX_CFLAGS_GCC_OPTION. Please keep this
-#   macro in sync with AX_CHECK_{PREPROC,COMPILE}_FLAG.
-#
-# LICENSE
-#
-#   Copyright (c) 2008 Guido U. Draheim <guidod@gmx.de>
-#   Copyright (c) 2011 Maarten Bosmans <mkbosmans@gmail.com>
-#
-#   This program is free software: you can redistribute it and/or modify it
-#   under the terms of the GNU General Public License as published by the
-#   Free Software Foundation, either version 3 of the License, or (at your
-#   option) any later version.
+#   macro in sync with AX_CHECK_{PREPROC,COMPILE}_FLAG
 #
 #   This program is distributed in the hope that it will be useful, but
 #   WITHOUT ANY WARRANTY; without even the implied warranty of

@@ -1,8 +1,6 @@
-dnl Copyright (c) 2015 Tim Kosse <tim.kosse@filezilla-project.org>
-dnl Copying and distribution of this file, with or without modification, are
-dnl permitted in any medium without royalty provided the copyright notice
-dnl and this notice are preserved. This file is offered as-is, without any
-dnl warranty.
+Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 # Some versions of gcc/libstdc++ require linking with -latomic if
 # using the C++ atomic library.

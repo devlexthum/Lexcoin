@@ -7,7 +7,7 @@
 #define LEXCOIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/safepe-config.h"
+#include "config/lexcoin-config.h"
 #endif
 
 #include <stdint.h>

@@ -1,4 +1,7 @@
-# ============================================================================
+##Copyright (c) 2017-2022 The Lex Core developers
+# Distributed under the MIT software license, see the accompanying
+# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
+============================================================================
 #  http://www.gnu.org/software/autoconf-archive/ax_boost_program_options.html
 # ============================================================================
 #
@@ -20,10 +23,6 @@
 #
 #     HAVE_BOOST_PROGRAM_OPTIONS
 #
-# LICENSE
-#
-#   Copyright (c) 2009 Thomas Porschberg <thomas@randspringer.de>
-#
 #   Copying and distribution of this file, with or without modification, are
 #   permitted in any medium without royalty provided the copyright notice
 #   and this notice are preserved. This file is offered as-is, without any
@@ -32,10 +31,6 @@
 #serial 24
 
 AC_DEFUN([AX_BOOST_PROGRAM_OPTIONS],
-[
-	AC_ARG_WITH([boost-program-options],
-		AS_HELP_STRING([--with-boost-program-options@<:@=special-lib@:>@],
-                       [use the program options library from boost - it is possible to specify a certain library for the linker
                         e.g. --with-boost-program-options=boost_program_options-gcc-mt-1_33_1 ]),
         [
         if test "$withval" = "no"; then

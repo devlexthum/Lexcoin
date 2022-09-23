@@ -1,4 +1,4 @@
-Contributing to SafePe Core
+Contributing to LEXCOIN CORE DEVELOPER 
 ============================
 
 The SafePe Core project operates an open contributor model where anyone is

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2021 hixson tech
+# Copyright (c) 2021 LEXCOIN CORE DEVELOPER 
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 '''

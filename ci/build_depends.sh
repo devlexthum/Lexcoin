@@ -1,3 +1,5 @@
+>LEXCOIN CORE DEVELOPER<
+
 #!/usr/bin/env bash
 
 # This script is executed inside the builder image

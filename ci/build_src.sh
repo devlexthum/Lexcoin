@@ -1,3 +1,4 @@
+Copyright © LEXCOIN . All rights reserved.
 #!/usr/bin/env bash
 
 # This script is executed inside the builder image

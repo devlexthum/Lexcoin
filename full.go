@@ -1369,20 +1369,20 @@ type HotGCOpts struct {
     Moving    bool
 }
 
-type EthTxReceipt struct {
-    TransactionHash   ethtypes.EthHash     `json:"transactionHash"`
-    TransactionIndex  ethtypes.EthUint64   `json:"transactionIndex"`
-    BlockHash         ethtypes.EthHash     `json:"blockHash"`
-    BlockNumber       ethtypes.EthUint64   `json:"blockNumber"`
-    From              ethtypes.EthAddress  `json:"from"`
-    To                *ethtypes.EthAddress `json:"to"`
-    StateRoot         ethtypes.EthHash     `json:"root"`
-    Status            ethtypes.EthUint64   `json:"status"`
-    ContractAddress   *ethtypes.EthAddress `json:"contractAddress"`
-    CumulativeGasUsed ethtypes.EthUint64   `json:"cumulativeGasUsed"`
-    GasUsed           ethtypes.EthUint64   `json:"gasUsed"`
-    EffectiveGasPrice ethtypes.EthBigInt   `json:"effectiveGasPrice"`
-    LogsBloom         ethtypes.EthBytes    `json:"logsBloom"`
-    Logs              []ethtypes.EthLog    `json:"logs"`
-    Type              ethtypes.EthUint64   `json:"type"`
+type LexTxReceipt struct {
+    TransactionHash   lextypes.LexHash     `json:"transactionHash"`
+    TransactionIndex  lextypes.LexUint64   `json:"transactionIndex"`
+    BlockHash         lextypes.LexHash     `json:"blockHash"`
+    BlockNumber       lextypes.LexUint64   `json:"blockNumber"`
+    From              lextypes.LexAddress  `json:"from"`
+    To                *lextypes.LexAddress `json:"to"`
+    StateRoot         lextypes.LexHash     `json:"root"`
+    Status            lextypes.LexUint64   `json:"status"`
+    ContractAddress   *lextypes.LexAddress `json:"contractAddress"`
+    CumulativeGasUsed lextypes.LexUint64   `json:"cumulativeGasUsed"`
+    GasUsed           lextypes.LexUint64   `json:"gasUsed"`
+    EffectiveGasPrice lextypes.LexBigInt   `json:"effectiveGasPrice"`
+    LogsBloom         lextypes.LexBytes    `json:"logsBloom"`
+    Logs              []lextypes.LexLog    `json:"logs"`
+    Type             lextypes.LexUint64   `json:"type"`
 }

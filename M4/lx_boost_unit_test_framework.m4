@@ -1,34 +1,5 @@
 ##Copyright (c) 2017-2022 The Lex Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
-================================================================================
-#  http://www.gnu.org/software/autoconf-archive/ax_boost_unit_test_framework.html
-# ================================================================================
-#
-# SYNOPSIS
-#
-#   AX_BOOST_UNIT_TEST_FRAMEWORK
-#
-# DESCRIPTION
-#
-#   Test for Unit_Test_Framework library from the Boost C++ libraries. The
-#   macro requires a preceding call to AX_BOOST_BASE. Further documentation
-#   is available at <http://randspringer.de/boost/index.html>.
-#
-#   This macro calls:
-#
-#     AC_SUBST(BOOST_UNIT_TEST_FRAMEWORK_LIB)
-#
-#   And sets:
-#
-#     HAVE_BOOST_UNIT_TEST_FRAMEWORK
-#
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved. This file is offered as-is, without any
-#   warranty.
-
-#serial 19
+# Distributed under the MIT software license, see the accompanyin
 
 AC_DEFUN([AX_BOOST_UNIT_TEST_FRAMEWORK],
 [

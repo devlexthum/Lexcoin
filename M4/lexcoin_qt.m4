@@ -3,21 +3,21 @@ Copyright (c) 2017-2022 The Lex Core developers
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 dnl Helper for cases where a qt dependency is not met.
-dnl Output: If qt version is auto, set bitcoin_enable_qt to false. Else, exit.
+dnl Output: If qt version is auto, set lexcoin_enable_qt to false. Else, exit.
 AC_DEFUN([LEXCOIN_QT_FAIL],[
-  if test "x$lexcoin_qt_want_version" = "xauto" && test x$bitcoin_qt_force != xyes; then
-    if test x$bitcoin_enable_qt != xno; then
+  if test "x$lexcoin_qt_want_version" = "xauto" && test x$lexcoin_qt_force != xyes; then
+    if test x$lexcoin_enable_qt != xno; then
       AC_MSG_WARN([$1; safepe-qt frontend will not be built])
     fi
-    bitcoin_enable_qt=no
-    bitcoin_enable_qt_test=no
+    lexcoin_enable_qt=no
+    lexcoin_enable_qt_test=no
   else
     AC_MSG_ERROR([$1])
   fi
 ])
 
 AC_DEFUN([LEXCOIN_QT_CHECK],[
-  if test "x$bitcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$lexcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
     true
     $1
   else
@@ -56,8 +56,8 @@ AC_DEFUN([LEXCOIN_QT_INIT],[
     [AS_HELP_STRING([--with-gui@<:@=no|qt4|qt5|auto@:>@],
     [build safepe-qt GUI (default=auto, qt5 tried first)])],
     [
-     bitcoin_qt_want_version=$withval
-     if test x$bitcoin_qt_want_version = xyes; then
+     lexcoin_qt_want_version=$withval
+     if test x$lexcoin_qt_want_version = xyes; then
        lexcoin_qt_force=yes
        lexcoin_qt_want_version=auto
      fi

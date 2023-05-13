@@ -1,39 +1,4 @@
 ##Copyright (c) 2019-2022 The Lex Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php. 
-===========================================================================
-#   http://www.gnu.org/software/autoconf-archive/ax_cxx_compile_stdcxx.html
-# ===========================================================================
-#
-# SYNOPSIS
-#
-#   AX_CXX_COMPILE_STDCXX(VERSION, [ext|noext], [mandatory|optional])
-#
-# DESCRIPTION
-#
-#   Check for baseline language coverage in the compiler for the specified
-#   version of the C++ standard.  If necessary, add switches to CXX and
-#   CXXCPP to enable support.  VERSION may be '11' (for the C++11 standard)
-#   or '14' (for the C++14 standard).
-#
-#   The second argument, if specified, indicates whether you insist on an
-#   extended mode (e.g. -std=gnu++11) or a strict conformance mode (e.g.
-#   -std=c++11).  If neither is specified, you get whatever works, with
-#   preference for an extended mode.
-#
-#   The third argument, if specified 'mandatory' or if left unspecified,
-#   indicates that baseline support for the specified C++ standard is
-#   required and that the macro should error out if no mode with that
-#   support is found.  If specified 'optional', then configuration proceeds
-#   regardless, after defining HAVE_CXX${VERSION} if and only if a
-#   supporting mode is found.
-#
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved.  This file is offered as-is, without any
-#   warranty.
-
-#serial 4
 
 dnl  This macro is based on the code from the AX_CXX_COMPILE_STDCXX_11 macro
 dnl  (serial version number 13).

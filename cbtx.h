@@ -1,7 +1,4 @@
-#!/bin/sh
-# Copyright (c) 2022 Lexcoin Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php.
+# Copyright (c) 2023 Lexcoin Core developers
 
 export LC_ALL=C
 if [ $# -gt 1 ]; then

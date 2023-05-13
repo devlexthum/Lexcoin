@@ -1,3 +1,4 @@
+# Copyright (c) 2021 Lexcoin Core developers
 -module(bn_accounts).
 
 -include("bn_jsonrpc.hrl").

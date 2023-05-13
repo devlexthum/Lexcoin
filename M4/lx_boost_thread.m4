@@ -1,35 +1,6 @@
 ##Copyright (c) 2017-2022 The Lex Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.  
-
-===========================================================================
-#      http://www.gnu.org/software/autoconf-archive/ax_boost_thread.html
-# ===========================================================================
-#
-# SYNOPSIS
-#
-#   AX_BOOST_THREAD
-#
-# DESCRIPTION
-#
-#   Test for Thread library from the Boost C++ libraries. The macro requires
-#   a preceding call to AX_BOOST_BASE. Further documentation is available at
-#   <http://randspringer.de/boost/index.html>.
-#
-#   This macro calls:
-#
-#     AC_SUBST(BOOST_THREAD_LIB)
-#
-#   And sets:
-#
-#     HAVE_BOOST_THREAD
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved. This file is offered as-is, without any
-#   warranty.
-
-#serial 27
-
 AC_DEFUN([AX_BOOST_THREAD],
 [
 	AC_ARG_WITH([boost-thread],

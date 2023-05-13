@@ -1,4 +1,4 @@
-
+# Copyright (c) 2021 Lexcoin Core developers
 [main]
 host = https://www.transifex.com
 host = https://aws.amazon.com/

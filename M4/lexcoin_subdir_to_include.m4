@@ -1,7 +1,3 @@
-Copyright (c) 2017-2022 The Lex Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php.
-
 dnl LEXCOIN_SUBDIR_TO_INCLUDE([CPPFLAGS-VARIABLE-NAME],[SUBDIRECTORY-NAME],[HEADER-FILE])
 dnl SUBDIRECTORY-NAME must end with a path separator
 AC_DEFUN([LEXCOIN_SUBDIR_TO_INCLUDE],[

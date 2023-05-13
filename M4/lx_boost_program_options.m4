@@ -1,35 +1,3 @@
-##Copyright (c) 2017-2022 The Lex Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php.  
-============================================================================
-#  http://www.gnu.org/software/autoconf-archive/ax_boost_program_options.html
-# ============================================================================
-#
-# SYNOPSIS
-#
-#   AX_BOOST_PROGRAM_OPTIONS
-#
-# DESCRIPTION
-#
-#   Test for program options library from the Boost C++ libraries. The macro
-#   requires a preceding call to AX_BOOST_BASE. Further documentation is
-#   available at <http://randspringer.de/boost/index.html>.
-#
-#   This macro calls:
-#
-#     AC_SUBST(BOOST_PROGRAM_OPTIONS_LIB)
-#
-#   And sets:
-#
-#     HAVE_BOOST_PROGRAM_OPTIONS
-#
-#   Copying and distribution of this file, with or without modification, are
-#   permitted in any medium without royalty provided the copyright notice
-#   and this notice are preserved. This file is offered as-is, without any
-#   warranty.
-
-#serial 24
-
 AC_DEFUN([AX_BOOST_PROGRAM_OPTIONS],
                         e.g. --with-boost-program-options=boost_program_options-gcc-mt-1_33_1 ]),
         [

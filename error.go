@@ -1,3 +1,4 @@
+# Copyright (c) 2023 Lexcoin Core developers
 package api
 
 import (

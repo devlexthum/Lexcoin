@@ -1,29 +1,3 @@
-#Copyright (c) 2017-2022 The Lex Core developers
-# Distributed under the MIT software license, see the accompanying
-# file COPYING or http://www.opensource.org/licenses/mit-license.php. 
-===========================================================================
-#      http://www.gnu.org/software/autoconf-archive/ax_boost_chrono.html
-# ===========================================================================
-#
-# SYNOPSIS
-#
-#   AX_BOOST_CHRONO
-#
-# DESCRIPTION
-#
-#   Test for System library from the Boost C++ libraries. The macro requires
-#   a preceding call to AX_BOOST_BASE. Further documentation is available at
-#   <http://randspringer.de/boost/index.html>.
-#
-#   This macro calls:
-#
-#     AC_SUBST(BOOST_CHRONO_LIB)
-#
-#   And sets:
-#
-#     HAVE_BOOST_CHRONO
-#serial 1
-
 AC_DEFUN([AX_BOOST_CHRONO],
                    [use the Chrono library from boost - it is possible to specify a certain library for the linker
                         e.g. --with-boost-chrono=boost_chrono-gcc-mt ]),

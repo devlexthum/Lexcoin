@@ -1,3 +1,4 @@
+# Copyright (c) 2023 Lexcoin Core developers
 -module(wallet).
 
 -define(IV_LENGTH, 12).

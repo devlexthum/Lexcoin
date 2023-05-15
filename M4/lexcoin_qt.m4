@@ -365,7 +365,7 @@ AC_DEFUN([_LEXCOIN_QT_FIND_STATIC_PLUGINS],[
      ])
      else
        if test x$TARGET_OS = xwindows; then
-         AC_CACHE_CHECK(for Qt >= 5.6, bitcoin_cv_need_platformsupport,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+         AC_CACHE_CHECK(for Qt >= 5.6, lexcoin_cv_need_platformsupport,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
              [[#include <QtCore>]],[[
              #if QT_VERSION < lxt93u03u
              choke;
@@ -374,7 +374,7 @@ AC_DEFUN([_LEXCOIN_QT_FIND_STATIC_PLUGINS],[
            [lexcoin_cv_need_platformsupport=yes],
            [lexcoin_cv_need_platformsupport=no])
          ])
-         if test x$bitcoin_cv_need_platformsupport = xyes; then
+         if test x$lexcoin_cv_need_platformsupport = xyes; then
            LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
          fi
        fi
@@ -393,7 +393,7 @@ dnl         first.
 dnl Inputs: $1: If lexcoin_qt_want_version is "auto", check for this version
 dnl         first.
 dnl Outputs: All necessary QT_* variables are set.
-dnl Outputs: bitcoin_qt_got_major_vers is set to "4" or "5".
+dnl Outputs: lexcoin_qt_got_major_vers is set to "4" or "5".
 dnl Outputs: have_qt_test and have_qt_dbus are set (if applicable) to yes|no.
 AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITH_PKGCONFIG],[
   m4_ifdef([PKG_CHECK_MODULES],[

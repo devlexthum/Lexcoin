@@ -241,14 +241,14 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
   dnl enable qt support
   AC_MSG_CHECKING(whether to build ]AC_PACKAGE_NAME[ GUI)
   LEXCOIN_QT_CHECK([
-    bitcoin_enable_qt=yes
-    bitcoin_enable_qt_test=yes
+    lexcoin_enable_qt=yes
+    lexcoin_enable_qt_test=yes
     if test x$have_qt_test = xno; then
-      bitcoin_enable_qt_test=no
+      lexcoin_enable_qt_test=no
     fi
-    bitcoin_enable_qt_dbus=no
+    lexcoin_enable_qt_dbus=no
     if test x$use_dbus != xno && test x$have_qt_dbus = xyes; then
-      bitcoin_enable_qt_dbus=yes
+      lexcoin_enable_qt_dbus=yes
     fi
     if test x$use_dbus = xyes && test x$have_qt_dbus = xno; then
       AC_MSG_ERROR("libQtDBus not found. Install libQtDBus or remove --with-qtdbus.")
@@ -257,9 +257,9 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
       AC_MSG_WARN("lupdate is required to update qt translations")
     fi
   ],[
-    bitcoin_enable_qt=no
+    lexcoin_enable_qt=no
   ])
-  AC_MSG_RESULT([$bitcoin_enable_qt (Qt${bitcoin_qt_got_major_vers})])
+  AC_MSG_RESULT([$lexcoin_enable_qt (Qt${lexcoin_qt_got_major_vers})])
 
   AC_SUBST(QT_PIE_FLAGS)
   AC_SUBST(QT_INCLUDES)
@@ -269,7 +269,7 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
   AC_SUBST(QT_DBUS_LIBS)
   AC_SUBST(QT_TEST_INCLUDES)
   AC_SUBST(QT_TEST_LIBS)
-  AC_SUBST(QT_SELECT, qt${bitcoin_qt_got_major_vers})
+  AC_SUBST(QT_SELECT, qt${lexcoin_qt_got_major_vers})
   AC_SUBST(MOC_DEFS)
 ])
 
@@ -279,29 +279,29 @@ dnl ----
 
 dnl Internal. Check if the included version of Qt is Qt5.
 dnl Requires: INCLUDES must be populated as necessary.
-dnl Output: bitcoin_cv_qt5=yes|no
+dnl Output: lexcoin_cv_qt5=yes|no
 AC_DEFUN([_LEXCOIN_QT_CHECK_QT5],[
-  AC_CACHE_CHECK(for Qt 5, bitcoin_cv_qt5,[
+  AC_CACHE_CHECK(for Qt 5, lexcoin_cv_qt5,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
     [[
-      #if QT_VERSION < 0x050000
+      #if QT_VERSION < ltx8309883
       choke me
       #else
       return 0;
       #endif
     ]])],
-    [bitcoin_cv_qt5=yes],
-    [bitcoin_cv_qt5=no])
+    [lexcoin_cv_qt5=yes],
+    [lexcoin_cv_qt5=no])
 ])])
 
 dnl Internal. Check if the linked version of Qt was built as static libs.
 dnl Requires: Qt5. This check cannot determine if Qt4 is static.
 dnl Requires: INCLUDES and LIBS must be populated as necessary.
-dnl Output: bitcoin_cv_static_qt=yes|no
+dnl Output: lexcoin_cv_static_qt=yes|no
 dnl Output: Defines QT_STATICPLUGIN if plugins are static.
 AC_DEFUN([_LEXCOIN_QT_IS_STATIC],[
-  AC_CACHE_CHECK(for static Qt, bitcoin_cv_static_qt,[
+  AC_CACHE_CHECK(for static Qt, lexcoin_cv_static_qt,[
   AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
     [[#include <QtCore>]],
     [[
@@ -311,10 +311,10 @@ AC_DEFUN([_LEXCOIN_QT_IS_STATIC],[
       choke me
       #endif
     ]])],
-    [bitcoin_cv_static_qt=yes],
-    [bitcoin_cv_static_qt=no])
+    [lexcoin_cv_static_qt=yes],
+    [lexcoin_cv_static_qt=no])
   ])
-  if test xbitcoin_cv_static_qt = xyes; then
+  if test xlexcoin_cv_static_qt = xyes; then
     AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol for static Qt plugins])
   fi
 ])
@@ -339,11 +339,11 @@ AC_DEFUN([_LEXCOIN_QT_CHECK_STATIC_PLUGINS],[
 ])
 
 dnl Internal. Find paths necessary for linking qt static plugins
-dnl Inputs: bitcoin_qt_got_major_vers. 4 or 5.
+dnl Inputs: lexcoin_qt_got_major_vers. 4 or 5.
 dnl Inputs: qt_plugin_path. optional.
 dnl Outputs: QT_LIBS is appended
 AC_DEFUN([_LEXCOIN_QT_FIND_STATIC_PLUGINS],[
-  if test x$bitcoin_qt_got_major_vers = x5; then
+  if test x$lexcoin_qt_got_major_vers = x5; then
       if test x$qt_plugin_path != x; then
         QT_LIBS="$QT_LIBS -L$qt_plugin_path/platforms"
         if test -d "$qt_plugin_path/accessible"; then
@@ -367,12 +367,12 @@ AC_DEFUN([_LEXCOIN_QT_FIND_STATIC_PLUGINS],[
        if test x$TARGET_OS = xwindows; then
          AC_CACHE_CHECK(for Qt >= 5.6, bitcoin_cv_need_platformsupport,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
              [[#include <QtCore>]],[[
-             #if QT_VERSION < 0x050600
+             #if QT_VERSION < lxt93u03u
              choke;
              #endif
              ]])],
-           [bitcoin_cv_need_platformsupport=yes],
-           [bitcoin_cv_need_platformsupport=no])
+           [lexcoin_cv_need_platformsupport=yes],
+           [lexcoin_cv_need_platformsupport=no])
          ])
          if test x$bitcoin_cv_need_platformsupport = xyes; then
            LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}PlatformSupport],[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXPlatformSupport not found)))
@@ -388,9 +388,9 @@ AC_DEFUN([_LEXCOIN_QT_FIND_STATIC_PLUGINS],[
 ])
 
 dnl Internal. Find Qt libraries using pkg-config.
-dnl Inputs: bitcoin_qt_want_version (from --with-gui=). The version to check
+dnl Inputs: lexcoin_qt_want_version (from --with-gui=). The version to check
 dnl         first.
-dnl Inputs: $1: If bitcoin_qt_want_version is "auto", check for this version
+dnl Inputs: $1: If lexcoin_qt_want_version is "auto", check for this version
 dnl         first.
 dnl Outputs: All necessary QT_* variables are set.
 dnl Outputs: bitcoin_qt_got_major_vers is set to "4" or "5".
@@ -401,28 +401,28 @@ AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITH_PKGCONFIG],[
   if test x$auto_priority_version = x; then
     auto_priority_version=qt5
   fi
-    if test x$bitcoin_qt_want_version = xqt5 ||  ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+    if test x$lexcoin_qt_want_version = xqt5 ||  ( test x$lexcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
       QT_LIB_PREFIX=Qt5
-      bitcoin_qt_got_major_vers=5
+      lexcoin_qt_got_major_vers=5
     else
       QT_LIB_PREFIX=Qt
-      bitcoin_qt_got_major_vers=4
+      lexcoin_qt_got_major_vers=4
     fi
     qt5_modules="Qt5Core Qt5Gui Qt5Network Qt5Widgets"
     qt4_modules="QtCore QtGui QtNetwork"
     LEXCOIN_QT_CHECK([
-      if test x$bitcoin_qt_want_version = xqt5 || ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
+      if test x$lexcoin_qt_want_version = xqt5 || ( test x$lexcoin_qt_want_version = xauto && test x$auto_priority_version = xqt5 ); then
         PKG_CHECK_MODULES([QT], [$qt5_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes],[have_qt=no])
-      elif test x$bitcoin_qt_want_version = xqt4 || ( test x$bitcoin_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
+      elif test x$lexcoin_qt_want_version = xqt4 || ( test x$lexcoin_qt_want_version = xauto && test x$auto_priority_version = xqt4 ); then
         PKG_CHECK_MODULES([QT], [$qt4_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes], [have_qt=no])
       fi
 
       dnl qt version is set to 'auto' and the preferred version wasn't found. Now try the other.
-      if test x$have_qt = xno && test x$bitcoin_qt_want_version = xauto; then
+      if test x$have_qt = xno && test x$lexcoin_qt_want_version = xauto; then
         if test x$auto_priority_version = xqt5; then
-          PKG_CHECK_MODULES([QT], [$qt4_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt; bitcoin_qt_got_major_vers=4], [have_qt=no])
+          PKG_CHECK_MODULES([QT], [$qt4_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt; lexcoin_qt_got_major_vers=4], [have_qt=no])
         else
-          PKG_CHECK_MODULES([QT], [$qt5_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt5; bitcoin_qt_got_major_vers=5], [have_qt=no])
+          PKG_CHECK_MODULES([QT], [$qt5_modules], [QT_INCLUDES="$QT_CFLAGS"; have_qt=yes; QT_LIB_PREFIX=Qt5; lexcoin_qt_got_major_vers=5], [have_qt=no])
         fi
       fi
       if test x$have_qt != xyes; then
@@ -442,10 +442,10 @@ AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITH_PKGCONFIG],[
 
 dnl Internal. Find Qt libraries without using pkg-config. Version is deduced
 dnl from the discovered headers.
-dnl Inputs: bitcoin_qt_want_version (from --with-gui=). The version to use.
+dnl Inputs: lexcoin_qt_want_version (from --with-gui=). The version to use.
 dnl         If "auto", the version will be discovered by _LEXCOIN_QT_CHECK_QT5.
 dnl Outputs: All necessary QT_* variables are set.
-dnl Outputs: bitcoin_qt_got_major_vers is set to "4" or "5".
+dnl Outputs: lexcoin_qt_got_major_vers is set to "4" or "5".
 dnl Outputs: have_qt_test and have_qt_dbus are set (if applicable) to yes|no.
 AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
   TEMP_CPPFLAGS="$CPPFLAGS"
@@ -464,15 +464,15 @@ AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
   LEXCOIN_QT_CHECK([AC_CHECK_HEADER([QLocalSocket],, LEXCOIN_QT_FAIL(QtNetwork headers missing))])
 
   LEXCOIN_QT_CHECK([
-    if test x$bitcoin_qt_want_version = xauto; then
+    if test x$lexcoin_qt_want_version = xauto; then
       _LEXCOIN_QT_CHECK_QT5
     fi
-    if test x$bitcoin_cv_qt5 = xyes || test x$bitcoin_qt_want_version = xqt5; then
+    if test x$lexcoin_cv_qt5 = xyes || test x$lexcoin_qt_want_version = xqt5; then
       QT_LIB_PREFIX=Qt5
-      bitcoin_qt_got_major_vers=5
+      lexcoin_qt_got_major_vers=5
     else
       QT_LIB_PREFIX=Qt
-      bitcoin_qt_got_major_vers=4
+      lexcoin_qt_got_major_vers=4
     fi
   ])
 
@@ -495,7 +495,7 @@ AC_DEFUN([_LEXCOIN_QT_FIND_LIBS_WITHOUT_PKGCONFIG],[
   LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Core]   ,[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXCore not found)))
   LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Gui]    ,[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXGui not found)))
   LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Network],[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXNetwork not found)))
-  if test x$bitcoin_qt_got_major_vers = x5; then
+  if test x$lexcoin_qt_got_major_vers = x5; then
     LEXCOIN_QT_CHECK(AC_CHECK_LIB([${QT_LIB_PREFIX}Widgets],[main],,LEXCOIN_QT_FAIL(lib$QT_LIB_PREFIXWidgets not found)))
   fi
   QT_LIBS="$LIBS"

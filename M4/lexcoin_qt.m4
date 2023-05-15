@@ -201,11 +201,11 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
     ])
   fi
 
-  LEXCOIN_QT_PATH_PROGS([MOC], [moc-qt${bitcoin_qt_got_major_vers} moc${bitcoin_qt_got_major_vers} moc], $qt_bin_path)
-  LEXCOIN_QT_PATH_PROGS([UIC], [uic-qt${bitcoin_qt_got_major_vers} uic${bitcoin_qt_got_major_vers} uic], $qt_bin_path)
-  LEXCOIN_QT_PATH_PROGS([RCC], [rcc-qt${bitcoin_qt_got_major_vers} rcc${bitcoin_qt_got_major_vers} rcc], $qt_bin_path)
-  LEXCOIN_QT_PATH_PROGS([LRELEASE], [lrelease-qt${bitcoin_qt_got_major_vers} lrelease${bitcoin_qt_got_major_vers} lrelease], $qt_bin_path)
-  LEXCOIN_QT_PATH_PROGS([LUPDATE], [lupdate-qt${bitcoin_qt_got_major_vers} lupdate${bitcoin_qt_got_major_vers} lupdate],$qt_bin_path, yes)
+  LEXCOIN_QT_PATH_PROGS([MOC], [moc-qt${lexcoin_qt_got_major_vers} moc${lexcoin_qt_got_major_vers} moc], $qt_bin_path)
+  LEXCOIN_QT_PATH_PROGS([UIC], [uic-qt${lexcoin_qt_got_major_vers} uic${lexcoin_qt_got_major_vers} uic], $qt_bin_path)
+  LEXCOIN_QT_PATH_PROGS([RCC], [rcc-qt${lexcoin_qt_got_major_vers} rcc${lexcoin_qt_got_major_vers} rcc], $qt_bin_path)
+  LEXCOIN_QT_PATH_PROGS([LRELEASE], [lrelease-qt${lexcoin_qt_got_major_vers} lrelease${lexcoin_qt_got_major_vers} lrelease], $qt_bin_path)
+  LEXCOIN_QT_PATH_PROGS([LUPDATE], [lupdate-qt${lexcoin_qt_got_major_vers} lupdate${lexcoin_qt_got_major_vers} lupdate],$qt_bin_path, yes)
 
   LEXCOIN_QT_CHECK([
     AC_CACHE_CHECK([whether $RCC accepts --format-version option],

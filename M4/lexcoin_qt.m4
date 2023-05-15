@@ -17,7 +17,7 @@ AC_DEFUN([LEXCOIN_QT_FAIL],[
 ])
 
 AC_DEFUN([LEXCOIN_QT_CHECK],[
-  if test "x$lexcoin_enable_qt" != "xno" && test x$bitcoin_qt_want_version != xno; then
+  if test "x$lexcoin_enable_qt" != "xno" && test x$lexcoin_qt_want_version != xno; then
     true
     $1
   else
@@ -85,7 +85,7 @@ dnl Inputs: $2: If $1 is "yes" and --with-gui=auto, which qt version should be
 dnl         tried first.
 dnl Outputs: See _LEXCOIN_QT_FIND_LIBS_*
 dnl Outputs: Sets variables for all qt-related tools.
-dnl Outputs: bitcoin_enable_qt, bitcoin_enable_qt_dbus, bitcoin_enable_qt_test
+dnl Outputs: lexcoin_enable_qt, lexcoin_enable_qt_dbus, lexcoin_enable_qt_test
 AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
   use_pkgconfig=$1
 
@@ -113,21 +113,21 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
   TEMP_CXXFLAGS=$CXXFLAGS
   CPPFLAGS="$QT_INCLUDES $CPPFLAGS"
   CXXFLAGS="$PIC_FLAGS $CXXFLAGS"
-  if test x$bitcoin_qt_got_major_vers = x5; then
+  if test x$lexcoin_qt_got_major_vers = x5; then
     _LEXCOIN_QT_IS_STATIC
-    if test x$bitcoin_cv_static_qt = xyes; then
+    if test x$lexcoin_cv_static_qt = xyes; then
       _LEXCOIN_QT_FIND_STATIC_PLUGINS
       AC_DEFINE(QT_STATICPLUGIN, 1, [Define this symbol if qt plugins are static])
-      AC_CACHE_CHECK(for Qt < 5.4, bitcoin_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
+      AC_CACHE_CHECK(for Qt < 5.4, lexcoin_cv_need_acc_widget,[AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
           [[#include <QtCore>]],[[
           #if QT_VERSION >= 0x050400
           choke;
           #endif
           ]])],
-        [bitcoin_cv_need_acc_widget=yes],
-        [bitcoin_cv_need_acc_widget=no])
+        [lexcoin_cv_need_acc_widget=yes],
+        [lexcoin_cv_need_acc_widget=no])
       ])
-      if test "x$bitcoin_cv_need_acc_widget" = "xyes"; then
+      if test "x$lexcoin_cv_need_acc_widget" = "xyes"; then
         _LEXCOIN_QT_CHECK_STATIC_PLUGINS([Q_IMPORT_PLUGIN(AccessibleFactory)], [-lqtaccessiblewidgets])
       fi
       if test x$TARGET_OS = xwindows; then
@@ -159,7 +159,7 @@ AC_DEFUN([LEXCOIN_QT_CONFIGURE],[
   ])
 
   if test x$use_pkgconfig$qt_bin_path = xyes; then
-    if test x$bitcoin_qt_got_major_vers = x5; then
+    if test x$lexcoin_qt_got_major_vers = x5; then
       qt_bin_path="`$PKG_CONFIG --variable=host_bins Qt5Core 2>/dev/null`"
     fi
   fi
